@@ -1,0 +1,342 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #272727; /* Cambia este valor */
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para hacer la página responsive */
+* {
+  box-sizing: border-box;
+}
+
+/* Agregar un contenedor para el contenido */
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Estilos para el icono fijo */
+.icono-fijo {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Aseguramos que el logo esté encima del slider */
+  width: 30px;
+  height: 38px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+/* Estilos para el slider */
+.slider {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  margin-top: 0; /* Ajusta el valor según sea necesario */
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s;
+  display: none; /* Agrega este estilo para ocultar las imágenes */
+}
+
+.slider img.active {
+  display: block; /* Agrega este estilo para mostrar la imagen activa */
+  opacity: 1;
+}
+
+/* Estilos para el título y la descripción */
+.titulo-descripcion {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #e0d7d7;
+  text-shadow: 0 0 10px rgba(241, 235, 235, 0.5);
+}
+
+.titulo-descripcion .titulo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.titulo-descripcion .descripcion {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para la sección de películas */
+.seccion-peliculas {
+  padding: 20px;
+}
+
+.contenedor-peliculas {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.contenedor-peliculas::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Opera */
+}
+
+.pelicula {
+  margin-right: 20px;
+}
+
+.pelicula img {
+  width: 150px; /* ancho fijo */
+  height: 200px; /* alto fijo */
+  object-fit: cover; /* ajusta la imagen al tamaño */
+  border-radius: 10px; /* agrega un borde redondeado */
+  transition: transform 0.2s ease-in-out;
+}
+
+.pelicula img:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos para la sección de series */
+.seccion-series {
+  padding: 20px;
+}
+
+.contenedor-series {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.contenedor-series::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Opera */
+}
+
+.serie {
+  margin-right: 20px;
+}
+
+.serie img {
+  width: 150px; /* ancho fijo */
+  height: 200px; /* alto fijo */
+  object-fit: cover; /* ajusta la imagen al tamaño */
+  border-radius: 10px; /* agrega un borde redondeado */
+  transition: transform 0.2s ease-in-out;
+}
+
+.serie img:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos para la sección de televisión */
+.seccion-televisión {
+  padding: 20px;
+}
+
+.contenedor-televisión {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.contenedor-televisión::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Opera */
+}
+
+.televisión {
+  margin-right: 20px;
+}
+
+.televisión img {
+  width: 150px; /* ancho fijo */
+  height: 150px; /* alto fijo */
+  border-radius: 50%; /* hacer la imagen redonda */
+  object-fit: cover; /* ajusta la imagen al tamaño */
+  transition: transform 0.2s ease-in-out;
+}
+
+.televisión img:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos para la sección de documentales */
+.seccion-documentales {
+  padding: 20px;
+}
+
+.contenedor-documentales {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.contenedor-documentales::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Opera */
+}
+
+.documental {
+  margin-right: 20px;
+}
+
+.documental img {
+  width: 250px; /* ancho fijo */
+  height: 150px; /* alto fijo */
+  object-fit: cover; /* ajusta la imagen al tamaño */
+  border-radius: 10px; /* agrega un borde redondeado */
+  transition: transform 0.2s ease-in-out;
+}
+
+.documental img:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos para la sección de música */
+.seccion-musica {
+  padding: 20px;
+}
+
+.contenedor-musica {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.contenedor-musica::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Opera */
+}
+
+.musica {
+  margin-right: 20px;
+}
+
+.musica img {
+  width: 150px; /* ancho fijo */
+  height: 200px; /* alto fijo */
+  object-fit: cover; /* ajusta la imagen al tamaño */
+  border-radius: 10px; /* agrega un borde redondeado */
+  transition: transform 0.2s ease-in-out;
+}
+
+.musica img:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos para la sección de podcasts */
+.seccion-podcasts {
+  padding: 20px;
+}
+
+.contenedor-podcasts {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.contenedor-podcasts::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Opera */
+}
+
+.podcast {
+  margin-right: 20px;
+}
+
+.podcast img {
+  width: 150px; /* ancho fijo */
+  height: 200px; /* alto fijo */
+  object-fit: cover; /* ajusta la imagen al tamaño */
+  border-radius: 10px; /* agrega un borde redondeado */
+  transition: transform 0.2s ease-in-out;
+}
+
+.podcast img:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos para la sección de punto bíblico */
+.seccion-punto-biblico {
+  padding: 20px;
+}
+
+.contenedor-punto-biblico {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.contenedor-punto-biblico::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Opera */
+}
+
+.punto-biblico {
+  margin-right: 20px;
+}
+
+.punto-biblico img {
+  width: 250px; /* ancho fijo */
+  height: 150px; /* alto fijo */
+  object-fit: cover; /* ajusta la imagen al tamaño */
+  border-radius: 10px; /* agrega un borde redondeado */
+  transition: transform 0.2s ease-in-out;
+}
+
+.punto-biblico img:hover {
+  transform: scale(1.1);
+}
+
+h2 {
+  color: #ffffff; /* Cambia este valor al color deseado */
+}
+
+/* Estilos para la sección de información adicional */
+.seccion-informacion-adicional {
+  padding: 20px;
+  background-color: #353434;
+  border-bottom: 1px solid #ddd;
+}
+
+.contenedor-informacion-adicional {
+  margin-top: 20px;
+}
+
+.contenedor-informacion-adicional p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+  .contenedor {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor {
+    padding: 5px;
+  }
+}
